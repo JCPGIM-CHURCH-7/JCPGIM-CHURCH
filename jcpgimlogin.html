@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login - Jesus Christ Power of Glory International Ministries</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='CSS/jcpgimlogin.css')}}">
+</head>
+<body>
+
+    <div class="container">
+        <h1>Login</h1>
+
+        <!-- Login Form -->
+        <div class="form-container">
+            <form id="loginForm" method="post">
+                <label for="username">Username</label>
+                <input type="text" id="username" name="username" placeholder="Enter your username" required>
+
+                <label for="password">Password</label>
+                <input type="password" id="password" name="password" placeholder="Enter your password" required>
+
+                <input type="submit" value="Login">
+            </form>
+        </div>
+
+        <div class="form-container">
+            <a href="forgot-password.html">Forgot Password?</a>
+        </div>
+    </div>
+
+    <footer>
+        <p>&copy; 2024 Jesus Christ Power of Glory International Ministries. All rights reserved.</p>
+    </footer>
+
+    <script>
+        // Example of handling form submission (it doesn't actually send data here)
+        document.getElementById("loginForm").addEventListener("submit", function(event) {
+            event.preventDefault(); // Prevent default form submission
+
+            const username = document.getElementById("username").value;
+            const password = document.getElementById("password").value;
+
+            // Simple validation for username and password (You can replace with your own credentials)
+            if (username === 'admin' && password === 'admin123') {
+                alert("Login successful!");
+                // Redirect to a new page (e.g., dashboard or homepage)
+                window.location.href = "index.html"; // Change this URL to your dashboard or home page
+            } else {
+                alert("Invalid credentials. Please try again.");
+            }
+        });
+    </script>
+
+</body>
+</html>
