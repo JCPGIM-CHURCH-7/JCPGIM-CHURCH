@@ -1,0 +1,178 @@
+/* General Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Body and General Styles */
+body {
+    font-family: 'Arial', sans-serif;
+    background: linear-gradient(135deg, #e6f7ff, #b3e0ff); /* Gradient Background */
+    margin: 0;
+    padding: 0;
+    color: #333;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    min-height: 100vh; /* Full viewport height */
+}
+
+/* Container Styles */
+.container {
+    width: 80%;
+    max-width: 900px;
+    margin: 40px auto;
+    background: rgba(255, 255, 255, 0.9); /* Semi-transparent white background */
+    padding: 40px;
+    border-radius: 15px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3); /* Strong Shadow */
+    transform: perspective(1000px) rotateX(5deg); /* 3D tilt */
+    transition: transform 0.4s, box-shadow 0.4s;
+}
+
+.container:hover {
+    transform: perspective(1000px) rotateX(0deg) scale(1.03); /* Lift effect */
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.4); /* Enhanced Shadow */
+}
+
+/* Heading Styles */
+h1, h3 {
+    text-align: center;
+    color: #00509e; /* Deep Blue */
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2); /* Text Depth Effect */
+    margin-bottom: 20px;
+}
+
+h1 {
+    font-size: 32px;
+}
+
+h3 {
+    font-size: 24px;
+}
+
+/* Form Styles */
+.form-container {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.form-container label {
+    font-weight: bold;
+    color: #004080; /* Rich Blue */
+}
+
+.form-container input,
+.form-container textarea {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #0073e6;
+    border-radius: 10px;
+    font-size: 16px;
+    box-shadow: inset 0 2px 5px rgba(0, 0, 0, 0.1); /* Input Depth */
+    transition: border-color 0.3s, box-shadow 0.3s, transform 0.2s;
+}
+
+.form-container textarea {
+    resize: none; /* Prevent resizing */
+    height: 120px;
+}
+
+.form-container input:focus,
+.form-container textarea:focus {
+    border-color: #0059b3;
+    box-shadow: 0 5px 15px rgba(0, 89, 179, 0.3); /* Glow Effect */
+    outline: none;
+    transform: scale(1.02); /* Slight Enlargement */
+}
+
+/* Submit Button Styles */
+button[type="submit"] {
+    background: linear-gradient(145deg, #0073e6, #0059b3); /* Gradient Button */
+    color: #ffffff;
+    border: none;
+    padding: 12px 25px;
+    border-radius: 10px; /* Modern Rounded Button */
+    cursor: pointer;
+    font-size: 16px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); /* Button Depth */
+    transition: background 0.3s, box-shadow 0.3s, transform 0.3s;
+    align-self: center; /* Center the button */
+}
+
+button[type="submit"]:hover {
+    background: linear-gradient(145deg, #0059b3, #003f80); /* Darker Gradient */
+    transform: translateY(-3px); /* Lift Effect */
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3); /* Enhanced Shadow */
+}
+
+/* Contact Info Styles */
+.contact-info {
+    text-align: center;
+    margin-top: 30px;
+    color: #00509e;
+}
+
+.contact-info p {
+    font-size: 16px;
+    margin: 5px 0;
+}
+
+.contact-info strong {
+    color: #004080; /* Highlight labels */
+}
+
+.contact-info a {
+    color: #0073e6;
+    text-decoration: none;
+    font-weight: bold;
+    transition: color 0.3s, text-shadow 0.3s;
+}
+
+.contact-info a:hover {
+    color: #004080;
+    text-shadow: 0 2px 5px rgba(0, 0, 0, 0.2); /* Glow on Hover */
+}
+
+/* Footer Styles */
+footer {
+    text-align: center;
+    padding: 20px 0;
+    background-color: #004080;
+    color: #fff;
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.3); /* Footer Text Depth */
+    box-shadow: 0 -5px 15px rgba(0, 0, 0, 0.3); /* Footer Depth */
+    width: 100%;
+}
+
+footer p {
+    margin: 0;
+    font-size: 14px;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .container {
+        padding: 20px;
+        transform: perspective(800px) rotateX(3deg); /* Adjusted tilt */
+    }
+
+    h1 {
+        font-size: 28px;
+    }
+
+    h3 {
+        font-size: 20px;
+    }
+
+    .form-container input,
+    .form-container textarea {
+        font-size: 14px;
+    }
+
+    button[type="submit"] {
+        font-size: 14px;
+    }
+}

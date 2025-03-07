@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jesus Christ Power of Glory International Ministries</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='CSS/jcpgim.css')}}">
+</head>
+<body>
+    <header>
+        <div class="container">
+            <h1>Jesus Christ Power of Glory International Ministries</h1>
+            <nav>
+                <ul>
+                    <li><a href="{{ url_for('signup')}}">Signup</a></li>
+                    <li><a href="{{ url_for('login')}}">Login</a></li>
+                    <li><a href="{{ url_for('jcpgimhome')}}" target="_blank">Home</a></li>
+                    <li><a href="{{ url_for('services')}}">Services</a></li>
+                    <li><a href="{{ url_for('contact')}}">Contact</a></li>
+                   </ul>
+            </nav>
+        </div>
+    </header>
+
+    <section id="showcase">
+        <div class="container">
+            <h1>Welcome to Jesus Christ Power of Glory International Ministries</h1>
+            <p>Your pathway to spiritual growth and fulfillment.</p>
+        </div>
+    </section>
+
+    <footer>
+        <p>Jesus Christ Power of Glory International Ministries, Copyright &copy; 2024</p>
+    </footer>
+</body>
+</html>

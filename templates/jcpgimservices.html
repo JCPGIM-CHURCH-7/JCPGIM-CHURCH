@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Prayer Requests and Christian Calendar</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='CSS/jcpgimservices.css')}}">
+</head>
+<body>
+    <div class="container">
+        <h1>Prayer Requests and Christian Calendar</h1>
+
+        <!-- Prayer Request Form -->
+        <div class="form-container">
+            <h2>Submit Your Prayer Request</h2>
+            <form id="prayerRequestForm">
+                <label for="name">Your Name:</label>
+                <input type="text" id="name" name="name" placeholder="Enter your name" required>
+
+                <label for="email">Your Email:</label>
+                <input type="email" id="email" name="email" placeholder="Enter your email" required>
+
+                <label for="category">Prayer Request Category:</label>
+                <select id="category" name="category" required>
+                    <option value="" disabled selected>Select a category</option>
+                    <option value="Exams">Exams</option>
+                    <option value="Money Problems">Money Problems</option>
+                    <option value="Family Problems">Family Problems</option>
+                    <option value="Land Issues">Land Issues</option>
+                    <option value="Health Problems">Health Problems</option>
+                    <option value="Other">Other</option>
+                </select>
+
+                <label for="message">Your Prayer Request:</label>
+                <textarea id="message" name="message" rows="4" placeholder="Write your prayer request here..." required></textarea>
+
+                <button type="submit">Submit Request</button>
+            </form>
+        </div>
+
+        <!-- Christian Calendar -->
+        <div class="calendar">
+            <h2>Christian Calendar</h2>
+            <div class="calendar-container" id="calendar"></div>
+        </div>
+
+        <div class="legend">
+            <span class="today-legend">Today's Date</span>
+            <span class="highlight-legend">Special Occasions</span>
+        </div>
+
+        <div class="footer">
+            <p>&copy; 2024 Jesus Christ Power of Glory International Ministries</p>
+        </div>
+    </div>
+
+    <script>
+        const christianFestivals = {
+            "01-06": "Epiphany",
+            "03-29": "Good Friday",
+            "03-31": "Easter Sunday",
+            "05-19": "Pentecost",
+            "12-25": "Christmas"
+        };
+
+        // Function to generate the calendar
+        function generateCalendar() {
+            const calendarContainer = document.getElementById("calendar");
+            const today = new Date();
+            const year = today.getFullYear();
+            const month = today.getMonth();
+            const daysInMonth = new Date(year, month + 1, 0).getDate();
+            const firstDay = new Date(year, month, 1).getDay();
+
+            // Clear the previous calendar
+            calendarContainer.innerHTML = "";
+
+            // Add day names
+            const dayNames = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"];
+            dayNames.forEach(day => {
+                const dayNameDiv = document.createElement("div");
+                dayNameDiv.classList.add("day-name");
+                dayNameDiv.textContent = day;
+                calendarContainer.appendChild(dayNameDiv);
+            });
+
+            // Add empty spaces for days before the first day of the month
+            for (let i = 0; i < firstDay; i++) {
+                const emptyDiv = document.createElement("div");
+                emptyDiv.classList.add("day");
+                calendarContainer.appendChild(emptyDiv);
+            }
+
+            // Add days with special highlights
+            for (let day = 1; day <= daysInMonth; day++) {
+                const dayDiv = document.createElement("div");
+                dayDiv.classList.add("day");
+                const dateStr = `${String(month + 1).padStart(2, "0")}-${String(day).padStart(2, "0")}`;
+
+                if (today.getDate() === day) {
+                    dayDiv.classList.add("today");
+                }
+
+                if (christianFestivals[dateStr]) {
+                    dayDiv.classList.add("highlight");
+                    dayDiv.title = christianFestivals[dateStr]; // Tooltip for special occasions
+                }
+
+                dayDiv.textContent = day;
+                calendarContainer.appendChild(dayDiv);
+            }
+        }
+
+        // Generate the calendar on page load
+        generateCalendar();
+
+        // Handle Prayer Request Form submission
+        const form = document.getElementById("prayerRequestForm");
+        form.addEventListener("submit", (e) => {
+            e.preventDefault();
+            alert("Thank you for submitting your prayer request. Our team will pray for you!");
+            form.reset();
+        });
+    </script>
+</body>
+</html>

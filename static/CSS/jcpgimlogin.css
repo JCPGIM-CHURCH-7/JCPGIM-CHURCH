@@ -1,0 +1,130 @@
+/* General Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* General Styles */
+body {
+    font-family: Arial, sans-serif;
+    background: linear-gradient(to bottom right, #e6f7ff, #b3e0ff); /* Soft Gradient Background */
+    margin: 0;
+    padding: 0;
+    color: #333;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    perspective: 1500px; /* 3D Perspective for the page */
+}
+
+/* Container with 3D Effect */
+.container {
+    width: 90%;
+    max-width: 400px;
+    background: #ffffff; /* White Background */
+    padding: 40px;
+    border-radius: 12px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2); /* Strong Shadow */
+    text-align: center;
+    transform-style: preserve-3d;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Add 3D Hover Effect */
+.container:hover {
+    transform: scale(1.05) rotateY(10deg) translateZ(20px); /* Slight Scale, Rotate, and Translate on Hover */
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.3); /* Enhanced Shadow */
+}
+
+/* Header Styling */
+h1, h2 {
+    text-align: center;
+    color: #00509e; /* Deep Blue Heading */
+    font-size: 1.8em;
+    margin-bottom: 20px;
+    text-shadow: 1px 1px 5px rgba(0, 0, 0, 0.2); /* Text Shadow for Depth */
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+/* Input Fields */
+input[type="text"],
+input[type="password"],
+input[type="submit"] {
+    width: 100%;
+    padding: 12px;
+    margin-bottom: 20px;
+    border-radius: 8px;
+    font-size: 14px;
+    transition: all 0.3s ease-in-out;
+}
+
+/* Text and Password Inputs */
+input[type="text"],
+input[type="password"] {
+    border: 1px solid #0073e6; /* Light Blue Border */
+    background-color: #f9f9fc; /* Slightly Off-White Background */
+}
+
+/* Input Focus State */
+input[type="text"]:focus,
+input[type="password"]:focus {
+    border-color: #00509e; /* Darker Blue on Focus */
+    outline: none;
+    transform: scale(1.05) rotateX(5deg); /* 3D Effect */
+    box-shadow: 0 4px 15px rgba(0, 89, 179, 0.5); /* Subtle Glow */
+}
+
+/* Submit Button */
+input[type="submit"] {
+    background-color: #0073e6; /* Vibrant Blue Button */
+    color: #fff;
+    border: none;
+    cursor: pointer;
+    font-size: 16px;
+    padding: 12px;
+    border-radius: 8px;
+    transition: background-color 0.3s, transform 0.3s ease-in-out;
+}
+
+/* Submit Button Hover State */
+input[type="submit"]:hover {
+    background-color: #0059b3; /* Darker Blue */
+    transform: scale(1.1) rotateX(10deg); /* Enlarging and Rotating Button */
+    box-shadow: 0 10px 20px rgba(0, 89, 179, 0.4);
+}
+
+/* Footer Links */
+.footer a {
+    color: #00509e; /* Bright Blue Link */
+    text-decoration: none;
+    font-weight: bold;
+    transition: color 0.3s, transform 0.3s ease-in-out;
+}
+
+/* Footer Links Hover */
+.footer a:hover {
+    color: #003d80; /* Dark Navy */
+    text-decoration: underline;
+    transform: translateY(-3px); /* Slight Lift Effect */
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .container {
+        padding: 30px;
+    }
+
+    h1, h2 {
+        font-size: 1.5em;
+    }
+
+    input[type="text"],
+    input[type="password"],
+    input[type="submit"] {
+        font-size: 14px;
+        padding: 10px;
+    }
+}
