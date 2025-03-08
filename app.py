@@ -8,9 +8,9 @@ app.secret_key = '123456789'
 def create_db_connection():
     try:
         connection = mysql.connector.connect(
-            host='localhost',
-            user='root',
-            password='Pranab$@12',
+            host='jcpgim.cpmgkga6yvj0.ap-south-1.rds.amazonaws.com',
+            user='admin',
+            password='Pranab$12',
             database='jcpgim'
         )
         if connection.is_connected():
